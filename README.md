@@ -113,9 +113,8 @@ SSH into the control node and follow the steps below:
 - Update the /etc/ansible/hosts file to include the [elk] group and the VM under the elk group.
 - Run the playbook, and navigate to the load balancer (52.142.3.108 (RedteamLB-RFJ)) to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it? Reference this file and place into the /etc/ansible directory
+- Reference this file and place into the /etc/ansible directory
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- _Which URL do you navigate to in order to check that the ELK server is running? 
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
