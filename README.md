@@ -8,45 +8,6 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
-  ---
- - name: Config elk VM with Docker
-   hosts: elk
-   remote_user: azureuser
-   become: true
-   tasks:
-   - name: docker.io
-     apt:
-       update_cache: yes
-       force_apt_get: yes
-       name: docker.io
-       state: present
-   - name: Install pip
-     apt:
-       force_apt_get: yes
-       name: python3-pip
-       state: present
-   - name: Install Docker python module
-     pip:
-       name: docker
-       state: present
-   - name: Enable docker service
-     systemd:
-       name: docker
-       enabled: yes
-   - name: User more memory
-     sysctl:
-       name: vm.max_map_count
-       value: '262144'
-       state: present
-       reload: yes
-   - name: download and launch a docker elk container
-     docker_container:
-       name: elk
-       image: sebp/elk:761
-       state: started
-       restart_policy: always
-       published_ports: 5601:5601, 9200:9200, 5044:5044
----
 - name: Installing and Launch Filebeat
   hosts: webservers
   become: yes
